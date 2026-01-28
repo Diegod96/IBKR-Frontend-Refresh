@@ -24,7 +24,7 @@ class UserService:
         Get a user by their ID.
 
         Args:
-            user_id: The user's UUID
+            user_id: The user's ID as a 36-character string
 
         Returns:
             The user if found, None otherwise
@@ -50,7 +50,7 @@ class UserService:
         Update a user's profile.
 
         Args:
-            user_id: The user's UUID
+            user_id: The user's ID as a 36-character string
             data: The update data
 
         Returns:
@@ -74,7 +74,7 @@ class UserService:
         Update a user's IBKR connection status.
 
         Args:
-            user_id: The user's UUID
+            user_id: The user's ID as a 36-character string
             connected: Whether IBKR is connected
 
         Returns:

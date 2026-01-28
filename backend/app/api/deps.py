@@ -30,7 +30,7 @@ async def get_current_user_id(
         authorization: The Authorization header containing the Bearer token
 
     Returns:
-        The user's UUID
+        The user's ID as a 36-character string
 
     Raises:
         AuthError: If authentication fails
@@ -55,7 +55,7 @@ async def get_current_user(
     Dependency to get the current authenticated user from the database.
 
     Args:
-        user_id: The user's UUID from the JWT token
+        user_id: The user's ID (string) from the JWT token
         db: Database session
 
     Returns:

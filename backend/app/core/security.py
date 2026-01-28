@@ -72,8 +72,8 @@ def extract_user_id_from_token(token: str) -> str:
     Args:
         token: The JWT token
 
-    Returns:
-        The user's UUID as a string
+        Returns:
+            The user's ID as a 36-character string
 
     Raises:
         AuthError: If the token is invalid or doesn't contain a user ID
