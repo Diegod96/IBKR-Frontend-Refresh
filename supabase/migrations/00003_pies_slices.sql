@@ -191,7 +191,7 @@ BEGIN
     new_total := current_total + NEW.target_weight;
     
     IF new_total > 100 THEN
-        RAISE EXCEPTION 'Total slice weights cannot exceed 100%%. Current: %%%, New: %%%, Total would be: %%%',
+        RAISE EXCEPTION 'Total slice weights cannot exceed 100%%. Current: %, New: %, Total would be: %',
             current_total, NEW.target_weight, new_total;
     END IF;
     
