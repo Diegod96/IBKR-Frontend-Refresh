@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8">
+    <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center p-8">
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
           IBKR Portfolio Manager
@@ -13,17 +14,14 @@ export default function Home() {
           and build positions with smart triggers.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Link
-            href="/dashboard"
-            className="btn-primary"
-          >
-            Get Started
+          <Link href="/signup">
+            <Button size="lg">Get Started</Button>
           </Link>
           <Link
-            href="/docs"
+            href="/login"
             className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400"
           >
-            Learn more <span aria-hidden="true">→</span>
+            Sign in <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
@@ -42,13 +40,13 @@ export default function Home() {
           description="Build positions gradually using time-based, price-based, or technical triggers."
         />
       </div>
-    </main>
+    </div>
   );
 }
 
 function FeatureCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="card p-6">
+    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
     </div>

@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     supabase_url: str = "http://localhost:54321"
     supabase_anon_key: str = ""
     supabase_service_role_key: str = ""
+    supabase_jwt_secret: str = ""  # JWT secret for verifying Supabase tokens
 
     # Database
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/postgres"
