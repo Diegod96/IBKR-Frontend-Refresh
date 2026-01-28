@@ -5,17 +5,17 @@ SQLAlchemy model for the users table.
 """
 
 from datetime import datetime
+from typing import TYPE_CHECKING, List
 from uuid import UUID
 
 from sqlalchemy import Boolean, DateTime, String
 from sqlalchemy.dialects.postgresql import UUID as PGUUID
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
+from app.core.database import Base
 
-class Base(DeclarativeBase):
-    """Base class for SQLAlchemy models."""
-
-    pass
+if TYPE_CHECKING:
+    from app.models.pie import Pie
 
 
 class User(Base):
@@ -32,6 +32,14 @@ class User(Base):
     )
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False
+    )
+
+    # Relationships
+    pies: Mapped[List["Pie"]] = relationship(
+        "Pie",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        order_by="Pie.display_order"
     )
 
     def __repr__(self) -> str:

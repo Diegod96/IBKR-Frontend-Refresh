@@ -4,6 +4,9 @@ SQLAlchemy Models
 Database models for the application.
 """
 
+from app.core.database import Base
 from app.models.user import User
+from app.models.pie import Pie
+from app.models.slice import Slice
 
-__all__ = ["User"]
+__all__ = ["Base", "User", "Pie", "Slice"]
