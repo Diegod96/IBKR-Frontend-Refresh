@@ -1,5 +1,9 @@
 """
-Pydantic Models Module
+SQLAlchemy Models
 
-Contains request/response models for API validation.
+Database models for the application.
 """
+
+from app.models.user import User
+
+__all__ = ["User"]

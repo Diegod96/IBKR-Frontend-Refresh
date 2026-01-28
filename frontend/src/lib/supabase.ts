@@ -1,13 +1,16 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
 /**
- * Supabase client for browser-side operations
- * Uses the anonymous key for client-side authentication
+ * Supabase Client Exports
+ * 
+ * Re-exports from the supabase folder for backwards compatibility.
+ * Prefer importing directly from '@/lib/supabase/client' or '@/lib/supabase/server'.
  */
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// Browser client for client components
+export { createClient as createBrowserClient } from './supabase/client';
+
+// Legacy export for existing code
+import { createClient } from './supabase/client';
+export const supabase = createClient();
 
 /**
  * API base URL for backend requests
