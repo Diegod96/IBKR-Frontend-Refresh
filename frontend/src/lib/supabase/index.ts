@@ -1,3 +1,8 @@
+// Browser client (sync) - for client components
 export { createClient as createBrowserClient } from './client';
-export { createClient as createServerClient } from './server';
-export { createClient as createMiddlewareClient } from './middleware';
+
+// Server client (async) - for server components
+// Import directly: import { createClient } from '@/lib/supabase/server'
+
+// Middleware client (sync) - for middleware
+// Import directly: import { createClient } from '@/lib/supabase/middleware'

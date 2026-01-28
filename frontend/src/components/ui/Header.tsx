@@ -11,7 +11,7 @@ import { createClient } from '@/lib/supabase/server';
 import { HeaderActions } from './HeaderActions';
 
 export async function Header() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
